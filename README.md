@@ -1,1 +1,1 @@
-# char-rnn-for-fate-stay-night
+# Text Generation for the Fate Series Visual Novels.
