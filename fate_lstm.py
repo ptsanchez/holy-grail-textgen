@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-class LSTMModel(nn.module):
+class LSTMModel(nn.Module):
     def __init__(self, vocab_size, embed_size, hidden_size, num_layers):
         super(LSTMModel, self).__init__()
         self.embed_size = embed_size
