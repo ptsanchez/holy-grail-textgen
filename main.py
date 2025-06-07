@@ -18,16 +18,8 @@ from train import train, eval
 def main():
     torch.manual_seed(0)
     parser = argparse.ArgumentParser()
-
-    # parser.add_argument(
-    #     'config_file_path',
-    #     type=str
-    # )
-
-    # args = parser.parse_args()
-
     config_file_path = "./configs/config.yaml"
-    input_file_path = 'data/tiny_shakespeare.txt'
+    input_file_path = 'data/fsn_script.txt'
 
     print('ENCODED TEXT DATA')
 
