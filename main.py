@@ -9,9 +9,7 @@ from torch.utils.data import random_split
 from util import encode_text, create_sequences
 from fate_dataset import FateDataset
 from fate_lstm import LSTMModel
-#from shakespeare_rnn import RNNModel
-#from shakespeare_lstm_no_force import LSTMModelNoTeacherForcing
-#from shakespeare_rnn_no_force import RNNModelNoTeacherForcing
+from fate_lstm_no_force import LSTMModelNoTeacherForcing
 from config import load_config
 from train import train, eval
 
@@ -52,7 +50,6 @@ def main():
     assert set(train_indices).isdisjoint(set(val_indices)) and set(train_indices).isdisjoint(set(test_indices)) and set(val_indices).isdisjoint(set(test_indices))
     print('PERFORMED TRAIN/VAL/TEST SPLIT')
 
-    # Index tensors to get non-overlapping splits
     X_train, y_train = X_tensor[train_indices], y_tensor[train_indices]
     X_val, y_val = X_tensor[val_indices], y_tensor[val_indices]
     X_test, y_test = X_tensor[test_indices], y_tensor[test_indices]
@@ -77,21 +74,12 @@ def main():
         model = LSTMModel(vocab_size, config['embed_size'],
                                     config['hidden_size'],
                                     config['num_layers']).to(device)
-    #elif config['model'] == 'LSTM_NO_FORCING':
-    #    print("TRAINING LSTM WITHOUT TEACHER FORCING")
-    #    model = LSTMModelNoTeacherForcing(vocab_size, config['embed_size'],
-    #                                config['hidden_size'],
-    #                                config['num_layers']).to(device)
-    #elif config['model'] == 'RNN':
-    #    print("TRAINING RNN")
-    #    model = RNNModel(vocab_size, config['hidden_size'],
-    #                                config['embed_size'],
-    #                                config['num_layers']).to(device)
-    #elif config['model'] == 'RNN_NO_FORCING':
-    #    print("TRAINING RNN WITHOUT TEACHER FORCING")
-    #    model = RNNModelNoTeacherForcing(vocab_size, config['hidden_size'],
-    #                                config['embed_size'],
-    #                                config['num_layers']).to(device)
+    elif config['model'] == 'LSTM_NO_FORCING':
+        print("TRAINING LSTM WITHOUT TEACHER FORCING")
+        model = LSTMModelNoTeacherForcing(vocab_size, config['embed_size'],
+                                    config['hidden_size'],
+                                    config['num_layers']).to(device)
+   
     else:
         print("Config Exception: please specify model type as\'LSTM\' or \'LSTM_NO_FORCING\'")
         return

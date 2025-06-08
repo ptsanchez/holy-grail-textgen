@@ -2,17 +2,17 @@ model: 'LSTM'
 
 embed_size: 100
 
-hidden_size: 150
+hidden_size: 100
 
-num_layers: 2
+num_layers: 3
+
+seq_len: 16
 
 epochs: 10
 
 early_stop_epochs: 3
 
 patience: 3
-
-seq_len: 16
 
 save_path: './models/base_lstm.pth'
 
