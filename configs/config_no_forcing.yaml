@@ -6,9 +6,7 @@ hidden_size: 50
 
 num_layers: 2
 
-seq_len: 16
-
-#Custom hyperparameters
+seq_len: 64
 
 epochs: 10
 
