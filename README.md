@@ -1,4 +1,3 @@
-# Text Generation for the Fate Series Visual Novels.
+# Exploring Teacher Forcing in LSTM-Based Text Generation of Fate Visual Novels
 
-
-Accompanying report for this code: [On the Effectiveness of Teacher Forcing in LSTM-Based Recurrent Neural Text Generation](https://drive.google.com/file/d/1hl7Qar1L-oTR0rC3mqqm517ssjYU-a5w/view?usp=sharing).
+This repository contains the implementation and experimental results for character-level text generation using Long Short-Term Memory (LSTM) networks trained on the Fate/stay night (Realta Nua) visual novel script. The primary focus of this work is to evaluate the effectiveness of teacher forcing as a training strategy in LSTM-based generative models. Multiple model configurations were tested under both teacher-forced and non-teacher-forced architectures, with variations in sequence length, depth, and hidden size. These findings provide insight into training stability and convergence under different conditions. For detailed analysis and results, see the accompanying final report located here: [On the Effectiveness of Teacher Forcing in LSTM-Based Recurrent Neural Text Generation](https://drive.google.com/file/d/1hl7Qar1L-oTR0rC3mqqm517ssjYU-a5w/view?usp=sharing).
